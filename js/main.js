@@ -172,7 +172,7 @@ if (baWrapper) {
     window.addEventListener('mousemove', e => { if (dragging) moveSlider(e.clientX); });
     window.addEventListener('mouseup', () => { dragging = false; });
     baWrapper.addEventListener('touchstart', e => { dragging = true; moveSlider(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchmove', e => { if (dragging) moveSlider(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); moveSlider(e.touches[0].clientX); } }, { passive: false });
     window.addEventListener('touchend', () => { dragging = false; });
 
     // Init at 50%
