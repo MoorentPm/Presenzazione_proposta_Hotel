@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moorent Pm — Proposta di Gestione Hotel</title>
+    <meta name="description" content="Moorent Pm: gestione online boutique per strutture ricettive. Pricing dinamico, piattaforme, burocrazia e visione a lungo termine." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#f3dfd9', 'primary-dark': '#e4c8c0', accent: '#232323' },
+                    fontFamily: { sans: ['Poppins','sans-serif'], heading: ['Montserrat','sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress-bar"></div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav id="main-nav">
+    <div class="container-lg h-full flex items-center justify-between">
+
+        <a href="#hero" class="flex items-center gap-2" style="text-decoration:none;">
+            <span style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.2rem; color:#232323; letter-spacing:-0.03em;">
+                Moorent<span style="color:#e4c8c0;">Pm</span>
+            </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-6">
+            <a href="#chi-siamo"   class="nav-link">Chi Siamo</a>
+            <a href="#proposte"    class="nav-link">Proposte</a>
+            <a href="#trasparenza" class="nav-link">Trasparenza</a>
+            <a href="#gestione"    class="nav-link">Gestione</a>
+            <a href="#contatti"    class="btn btn-accent" style="padding:0.55rem 1.4rem; font-size:0.85rem;">Contattaci</a>
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-600">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-0 z-50 translate-x-full" style="background:rgba(35,35,35,0.98);">
+    <div class="flex flex-col h-full p-6">
+        <div class="flex justify-between items-center mb-10">
+            <span style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.1rem; color:#fff;">MoorentPm</span>
+            <button id="close-mobile-menu" class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/20 text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a href="#chi-siamo"   class="nav-link-mobile text-white/80 text-lg font-medium py-3 border-b border-white/10 hover:text-white transition-colors">Chi Siamo</a>
+            <a href="#proposte"    class="nav-link-mobile text-white/80 text-lg font-medium py-3 border-b border-white/10 hover:text-white transition-colors">Proposte</a>
+            <a href="#trasparenza" class="nav-link-mobile text-white/80 text-lg font-medium py-3 border-b border-white/10 hover:text-white transition-colors">Trasparenza</a>
+            <a href="#gestione"    class="nav-link-mobile text-white/80 text-lg font-medium py-3 border-b border-white/10 hover:text-white transition-colors">Gestione</a>
+        </nav>
+        <div class="mt-auto">
+            <a href="#contatti" class="nav-link-mobile btn btn-primary w-full justify-center text-center">Inizia la conversazione</a>
+        </div>
+    </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section id="hero">
+    <div class="container-lg relative z-10">
+        <div class="max-w-3xl">
+
+            <div class="hero-badge animate-on-scroll fade-in-up">
+                <i class="fa-solid fa-gem" style="font-size:0.65rem;"></i>
+                Gestione Online &middot; Boutique &middot; Selettiva
+            </div>
+
+            <h1 class="animate-on-scroll fade-in-up delay-100"
+                style="font-size:clamp(2.2rem,5vw,3.8rem); font-weight:800; color:#fff; line-height:1.15; margin-bottom:1.5rem;">
+                Il Vostro Hotel<br/>
+                <span style="color:#f3dfd9;">Merita di Essere Trovato.</span>
+            </h1>
+
+            <p class="animate-on-scroll fade-in-up delay-200"
+               style="font-size:clamp(1rem,2vw,1.15rem); color:rgba(248,250,252,0.70); max-width:580px; line-height:1.75; margin-bottom:2.5rem;">
+                Gestiamo la vostra struttura online con la cura di chi tratta ogni hotel come un asset unico.
+                Pricing dinamico, piattaforme, burocrazia e prenotazioni dirette:
+                tutto incluso, senza sorprese.
+            </p>
+
+            <div class="flex flex-wrap gap-3 animate-on-scroll fade-in-up delay-300">
+                <a href="#proposte" class="btn btn-primary">
+                    Scopri le proposte <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+                <a href="#trasparenza" class="btn btn-outline">
+                    Come funzionano le commissioni <i class="fa-solid fa-calculator text-sm"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <span>Scorri</span>
+        <i class="fa-solid fa-chevron-down bounce-icon"></i>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     01 / CHI SIAMO
+═══════════════════════════════════════ -->
+<section id="chi-siamo">
+    <div class="container-lg">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <div>
+                <span class="section-label animate-on-scroll fade-in-left">Chi Siamo</span>
+                <h2 class="animate-on-scroll fade-in-left delay-100"
+                    style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; line-height:1.2; margin-bottom:1.25rem;">
+                    Un team boutique.<br/>
+                    <span style="color:#e4c8c0;">Non un grande network.</span>
+                </h2>
+                <p class="animate-on-scroll fade-in-left delay-200"
+                   style="color:#555; line-height:1.75; font-size:0.975rem; margin-bottom:1.75rem;">
+                    Moorent Pm è un team specializzato nella gestione online di strutture ricettive.
+                    Non lavoriamo con tutti: scegliamo con cura gli hotel e i B&amp;B con cui costruire
+                    collaborazioni a lungo termine, dove la crescita è misurabile e condivisa.
+                </p>
+                <p class="animate-on-scroll fade-in-left delay-300"
+                   style="color:#555; line-height:1.75; font-size:0.975rem;">
+                    Trattiamo ogni struttura come un asset da valorizzare nel tempo —
+                    non come un prodotto da piazzare sulle piattaforme.
+                </p>
+            </div>
+
+            <!-- 4 Pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-100">
+                    <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-handshake-simple"></i></div>
+                    <h3 style="font-size:0.975rem; font-weight:700; margin-bottom:0.5rem;">Selezione e Cura Diretta</h3>
+                    <p style="font-size:0.875rem; color:#666; line-height:1.6;">Scegliamo con cura le strutture con cui lavoriamo. Il nostro portfolio è piccolo per scelta.</p>
+                </div>
+
+                <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-200">
+                    <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 style="font-size:0.975rem; font-weight:700; margin-bottom:0.5rem;">Pricing Dinamico</h3>
+                    <p style="font-size:0.875rem; color:#666; line-height:1.6;">ADR e RevPAR monitorati ogni giorno. Tariffe aggiornate in tempo reale su tutti i canali.</p>
+                </div>
+
+                <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-300">
+                    <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-rotate"></i></div>
+                    <h3 style="font-size:0.975rem; font-weight:700; margin-bottom:0.5rem;">Piattaforme e Burocrazia</h3>
+                    <p style="font-size:0.875rem; color:#666; line-height:1.6;">Gestione integrata di Airbnb, Booking.com e di tutti gli adempimenti burocratici richiesti.</p>
+                </div>
+
+                <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-400">
+                    <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 style="font-size:0.975rem; font-weight:700; margin-bottom:0.5rem;">Visione a Lungo Termine</h3>
+                    <p style="font-size:0.875rem; color:#666; line-height:1.6;">Costruiamo valore nel tempo, non solo prenotazioni. Ogni intervento migliora l'asset.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     02 / FILOSOFIA DI LAVORO
+═══════════════════════════════════════ -->
+<section id="filosofia" class="dark-section">
+    <div class="container-lg">
+
+        <div class="text-center mb-14 animate-on-scroll fade-in-up">
+            <span class="section-label">Il nostro approccio</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; color:#f8fafc; margin-bottom:1rem;">
+                Ogni intervento che facciamo<br/>aumenta il valore del vostro hotel.
+            </h2>
+            <div class="accent-divider"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+
+            <div class="animate-on-scroll fade-in-left">
+                <p style="color:rgba(248,250,252,0.72); line-height:1.8; font-size:1rem; margin-bottom:2rem;">
+                    La gestione professionale di una struttura ricettiva non è solo un servizio operativo —
+                    è un percorso di valorizzazione progressiva. Ogni ottimizzazione delle tariffe,
+                    ogni risposta curata agli ospiti, ogni miglioramento visivo delle schede online
+                    si accumula nel tempo e si traduce in un asset che vale di più.
+                </p>
+                <div class="quote-block animate-on-scroll fade-in-left delay-200">
+                    "Ogni miglioramento che facciamo oggi sulla vostra struttura vale il doppio domani."
+                </div>
+            </div>
+
+            <!-- 4 metrics -->
+            <div class="grid grid-cols-2 gap-4 animate-on-scroll fade-in-right delay-100">
+
+                <div class="kpi-card">
+                    <div class="kpi-value">78%</div>
+                    <div class="kpi-label">Occupazione media gestita</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">+24%</div>
+                    <div class="kpi-label">Crescita ADR media annua</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">4.8<span style="font-size:1.5rem;">★</span></div>
+                    <div class="kpi-label">Rating medio sulle piattaforme</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">+40%</div>
+                    <div class="kpi-label">Prenotazioni dirette anno 1</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     03 / AI RENDERING & STAGING  ← SEZIONE OPZIONALE
+     Includere quando la struttura ha potenziale di restyling.
+     Escludere per hotel già completamente rinnovati.
+═══════════════════════════════════════ -->
+<section id="rendering">
+    <div class="container-lg">
+
+        <div class="text-center mb-14 animate-on-scroll fade-in-up">
+            <span class="section-label">Dalla realtà alla visione</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem;">
+                Vedete il potenziale<br/>
+                <span style="color:#e4c8c0;">prima di toccare un mobile.</span>
+            </h2>
+            <p style="max-width:540px; margin:0 auto; color:#666; line-height:1.7; font-size:1rem;">
+                Con AI rendering e home staging professionale trasformiamo la percezione della vostra struttura
+                aumentando ADR e tasso di conversione sulle piattaforme.
+            </p>
+            <div class="accent-divider"></div>
+        </div>
+
+        <!-- Before / After Slider -->
+        <div class="max-w-3xl mx-auto mb-14 animate-on-scroll scale-in">
+            <div id="ba-slider">
+
+                <!-- AFTER (base) -->
+                <div id="ba-after" style="background:linear-gradient(160deg,#3a2520 0%,#6b4a3e 40%,#b8896e 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
+                    <div style="text-align:center; padding:2rem;">
+                        <div style="font-size:3.5rem; margin-bottom:1rem; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));">🛏️</div>
+                        <div style="font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Camera Deluxe</div>
+                        <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+                            <span style="background:rgba(243,223,217,0.2); color:#f3dfd9; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Warm Tones</span>
+                            <span style="background:rgba(243,223,217,0.2); color:#f3dfd9; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Soft Lighting</span>
+                            <span style="background:rgba(243,223,217,0.2); color:#f3dfd9; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Premium Feel</span>
+                        </div>
+                        <div style="margin-top:1.25rem; background:rgba(243,223,217,0.15); border-radius:999px; padding:0.4rem 1rem; display:inline-block; color:#f3dfd9; font-size:0.8rem; font-weight:600;">
+                            ADR stimato: +€35/notte
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEFORE (clip) -->
+                <div id="ba-before" style="background:linear-gradient(160deg,#888 0%,#aaa 40%,#ccc 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
+                    <div style="text-align:center; padding:2rem;">
+                        <div style="font-size:3.5rem; margin-bottom:1rem; filter:grayscale(0.5);">🛏️</div>
+                        <div style="font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Camera Deluxe</div>
+                        <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+                            <span style="background:rgba(255,255,255,0.15); color:#fff; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Dull Colors</span>
+                            <span style="background:rgba(255,255,255,0.15); color:#fff; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Flat Light</span>
+                            <span style="background:rgba(255,255,255,0.15); color:#fff; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Generic</span>
+                        </div>
+                        <div style="margin-top:1.25rem; background:rgba(255,255,255,0.15); border-radius:999px; padding:0.4rem 1rem; display:inline-block; color:#fff; font-size:0.8rem; font-weight:600;">
+                            ADR attuale: tariffa base
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Handle -->
+                <div id="ba-handle"></div>
+
+                <!-- Labels -->
+                <div class="ba-label left">Prima</div>
+                <div class="ba-label right">Dopo</div>
+            </div>
+            <p style="text-align:center; font-size:0.78rem; color:#aaa; margin-top:0.75rem;">
+                <i class="fa-solid fa-hand-pointer" style="margin-right:0.3rem;"></i>Trascina per confrontare
+            </p>
+        </div>
+
+        <!-- 2 text blocks -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="custom-card animate-on-scroll fade-in-left">
+                <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.75rem;">AI Room Rendering</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.7;">
+                    Prima di toccare un mobile, vi mostriamo com'è la camera nel suo potenziale migliore.
+                    Il rendering AI ci permette di testare palette, illuminazione e arredi
+                    senza investimenti fisici — e di presentare la visione agli ospiti ancor prima di realizzarla.
+                </p>
+            </div>
+
+            <div class="custom-card animate-on-scroll fade-in-right delay-100">
+                <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-couch"></i></div>
+                <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.75rem;">Staging Professionale</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.7;">
+                    Interventi mirati — cuscini, luce, piante, accessori — calibrati per aumentare
+                    l'ADR e il tasso di conversione sulle OTA. Nessuna ristrutturazione invasiva:
+                    solo le modifiche con il miglior rapporto impatto/costo.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     04 / LE NOSTRE PROPOSTE
+═══════════════════════════════════════ -->
+<section id="proposte" style="background:#f8fafc;">
+    <div class="container-lg">
+
+        <div class="text-center mb-12 animate-on-scroll fade-in-up">
+            <span class="section-label">Le proposte</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem;">
+                Due percorsi,<br/>un solo obiettivo.
+            </h2>
+            <p style="max-width:520px; margin:0 auto; color:#666; line-height:1.7; font-size:1rem;">
+                Entrambe le opzioni includono commissioni calcolate sempre <strong>netto commissioni OTA</strong> e <strong>netto costi pulizie</strong>. Nessuna voce nascosta.
+            </p>
+            <div class="accent-divider"></div>
+        </div>
+
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10 animate-on-scroll fade-in-up delay-100">
+            <button class="service-tab-button active" data-target="tab-pilota">
+                <i class="fa-solid fa-seedling mr-2"></i>Opzione A — Percorso Pilota
+            </button>
+            <button class="service-tab-button" data-target="tab-completa">
+                <i class="fa-solid fa-star mr-2"></i>Opzione B — Partnership Completa
+            </button>
+        </div>
+
+        <!-- OPZIONE A -->
+        <div id="tab-pilota" class="service-content active">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+                <div class="custom-card offer-card lg:col-span-3">
+                    <div class="flex justify-between items-start mb-6 flex-wrap gap-3">
+                        <div>
+                            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:#aaa; margin-bottom:0.5rem;">Opzione A</div>
+                            <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:0.25rem;">Percorso Pilota</h3>
+                            <p style="color:#888; font-size:0.9rem;">Iniziamo su 5 unità, espandiamo quando siete pronti.</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-family:'Montserrat',sans-serif; font-size:2.5rem; font-weight:800; color:#232323; line-height:1;">12%</div>
+                            <div style="font-size:0.78rem; color:#888; line-height:1.4;">netto OTA<br/>netto pulizie</div>
+                        </div>
+                    </div>
+
+                    <ul class="styled-list" style="margin-bottom:2rem;">
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>5 camere/unità selezionate</strong> — il perimetro ideale per testare il modello</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Revenue management e pricing dinamico su tutte le unità</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Apertura e ottimizzazione annunci su Airbnb, Booking.com e canali aggiuntivi</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Gestione completa della comunicazione con gli ospiti</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Adempimenti burocratici (Alloggiati Web, ROSS 1000, tassa di soggiorno)</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Reportistica mensile con KPI dettagliati</span></li>
+                    </ul>
+
+                    <div style="background:#f8fafc; border-radius:0.875rem; padding:1rem 1.25rem; margin-bottom:1.5rem;">
+                        <p style="font-size:0.875rem; color:#666; line-height:1.6;">
+                            <i class="fa-solid fa-circle-info" style="color:#e4c8c0; margin-right:0.4rem;"></i>
+                            Il Percorso Pilota è <strong>espandibile in qualsiasi momento</strong> all'intero portfolio,
+                            con transizione automatica alla commissione del 10% dell'Opzione B.
+                        </p>
+                    </div>
+
+                    <a href="#contatti" class="btn btn-accent w-full justify-center">
+                        Inizia con il Pilota <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-2 flex flex-col gap-4">
+                    <div style="background:linear-gradient(135deg,#f3dfd9,#e4c8c0); border-radius:1.25rem; padding:1.75rem;">
+                        <div style="font-weight:700; margin-bottom:0.5rem; font-size:0.875rem; color:#464646;">Ideale per</div>
+                        <ul class="styled-list" style="margin:0;">
+                            <li style="margin-bottom:0.5rem;"><span class="check-icon" style="background:rgba(35,35,35,0.12); color:#232323;"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span style="font-size:0.875rem; color:#232323;">Hotel che vogliono testare il modello prima di affidarci tutto</span></li>
+                            <li style="margin-bottom:0.5rem;"><span class="check-icon" style="background:rgba(35,35,35,0.12); color:#232323;"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span style="font-size:0.875rem; color:#232323;">Strutture con cambio gestione in corso</span></li>
+                            <li><span class="check-icon" style="background:rgba(35,35,35,0.12); color:#232323;"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span style="font-size:0.875rem; color:#232323;">Chi vuole migliorare prima le camere più redditizie</span></li>
+                        </ul>
+                    </div>
+                    <div class="custom-card" style="padding:1.5rem; text-align:center;">
+                        <div style="font-size:0.75rem; color:#aaa; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em;">Commissione esempio</div>
+                        <div style="font-size:0.875rem; color:#666; line-height:1.8;">
+                            Prenotazione <strong>€400</strong><br/>
+                            − OTA 15% = −€60<br/>
+                            − Pulizie = −€20<br/>
+                            Base = <strong>€320</strong><br/>
+                            12% su €320 = <span style="color:#232323; font-weight:700;">€38,40 a Moorent Pm</span><br/>
+                            <span style="font-size:1.05rem; font-weight:800; color:#232323;">A voi: €281,60</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- OPZIONE B -->
+        <div id="tab-completa" class="service-content">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+                <div class="custom-card offer-card lg:col-span-3" style="border-left-color:#232323; position:relative; overflow:hidden;">
+                    <!-- Badge consigliato -->
+                    <div style="position:absolute; top:1.5rem; right:1.5rem; background:#232323; color:#f3dfd9; padding:0.35rem 0.9rem; border-radius:999px; font-size:0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">
+                        ★ Consigliato
+                    </div>
+
+                    <div style="margin-bottom:1.5rem; padding-right:8rem;">
+                        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:#aaa; margin-bottom:0.5rem;">Opzione B</div>
+                        <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:0.25rem;">Partnership Completa</h3>
+                        <p style="color:#888; font-size:0.9rem;">Massima integrazione, commissione ridotta per scala.</p>
+                    </div>
+
+                    <div style="margin-bottom:1.5rem;">
+                        <div style="font-family:'Montserrat',sans-serif; font-size:2.5rem; font-weight:800; color:#232323; line-height:1;">10%</div>
+                        <div style="font-size:0.78rem; color:#888; line-height:1.4;">netto OTA · netto pulizie · intero portfolio</div>
+                    </div>
+
+                    <ul class="styled-list" style="margin-bottom:2rem;">
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Intero portfolio dal giorno 1</strong> — nessuna fase di test, partenza immediata</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Tutto l'Opzione A, senza eccezioni</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Revenue management avanzato per tipologia di camera (suite, standard, vista)</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Sito web premium incluso</strong> — progettazione, booking engine, SEO locale</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Shooting fotografico professionale</strong> incluso per tutte le camere</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Home staging</strong> e consulenza spazi inclusa</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Full digital concierge</strong> — welcome app con info struttura, zona e servizi</span></li>
+                    </ul>
+
+                    <a href="#contatti" class="btn btn-accent w-full justify-center">
+                        Scegli la Partnership Completa <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-2 flex flex-col gap-4">
+                    <div style="background:linear-gradient(135deg,#232323,#3a2520); border-radius:1.25rem; padding:1.75rem;">
+                        <div style="font-weight:700; margin-bottom:0.5rem; font-size:0.875rem; color:rgba(248,250,252,0.6);">Ideale per</div>
+                        <ul class="styled-list">
+                            <li style="margin-bottom:0.5rem;"><span class="check-icon" style="background:rgba(243,223,217,0.15); color:#f3dfd9;"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span style="font-size:0.875rem; color:rgba(248,250,252,0.8);">Hotel pronti a una trasformazione completa</span></li>
+                            <li style="margin-bottom:0.5rem;"><span class="check-icon" style="background:rgba(243,223,217,0.15); color:#f3dfd9;"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span style="font-size:0.875rem; color:rgba(248,250,252,0.8);">Strutture senza sito web o con sito datato</span></li>
+                            <li><span class="check-icon" style="background:rgba(243,223,217,0.15); color:#f3dfd9;"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span style="font-size:0.875rem; color:rgba(248,250,252,0.8);">Hotel che vogliono ridurre la dipendenza dalle OTA</span></li>
+                        </ul>
+                    </div>
+                    <div class="custom-card" style="padding:1.5rem; text-align:center;">
+                        <div style="font-size:0.75rem; color:#aaa; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.08em;">Risparmio vs Opzione A</div>
+                        <div style="font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:800; color:#232323; margin-bottom:0.25rem;">−2%</div>
+                        <div style="font-size:0.82rem; color:#666; line-height:1.6;">su ogni prenotazione, su tutto il portfolio, con sito web + foto + staging già inclusi.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     05 / TRASPARENZA ECONOMICA
+═══════════════════════════════════════ -->
+<section id="trasparenza" class="dark-section">
+    <div class="container-lg">
+
+        <div class="text-center mb-14 animate-on-scroll fade-in-up">
+            <span class="section-label">Trasparenza economica</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; color:#f8fafc; margin-bottom:1rem;">
+                Nessuna voce nascosta.<br/>
+                <span style="color:#f3dfd9;">Solo matematica.</span>
+            </h2>
+            <p style="max-width:540px; margin:0 auto; color:rgba(248,250,252,0.6); line-height:1.7; font-size:1rem;">
+                La nostra commissione si calcola sempre sul netto reale — dopo che le OTA hanno già preso la loro parte.
+                Cambiate il prezzo di prenotazione e vedete i numeri in tempo reale.
+            </p>
+            <div class="accent-divider"></div>
+        </div>
+
+        <!-- Formula -->
+        <div class="max-w-xl mx-auto mb-12 animate-on-scroll scale-in">
+            <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:1.25rem; padding:2rem;">
+                <div style="font-family:'Montserrat',sans-serif; font-weight:700; color:#f3dfd9; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1.25rem;">La formula</div>
+                <div style="font-size:0.95rem; line-height:2; color:rgba(248,250,252,0.85);">
+                    Ricavo lordo prenotazione<br/>
+                    <span style="color:rgba(248,250,252,0.4); padding-left:1rem;">− Commissione OTA (se presente)</span><br/>
+                    <span style="color:rgba(248,250,252,0.4); padding-left:1rem;">− Costo pulizie (€20 fisso a prenotazione)</span><br/>
+                    <div style="height:1px; background:rgba(255,255,255,0.15); margin:0.5rem 0;"></div>
+                    <strong style="color:#f3dfd9; font-family:'Montserrat',sans-serif;">= Base commissione Moorent Pm</strong><br/>
+                    <span style="color:rgba(248,250,252,0.5); font-size:0.82rem;">La nostra % si applica solo su questa base.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator + Table -->
+        <div class="animate-on-scroll fade-in-up delay-100">
+            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:1.25rem; padding:2rem 2.5rem;">
+
+                <!-- Inputs -->
+                <div class="tp-input-row">
+                    <div class="tp-input-wrapper">
+                        <label style="color:rgba(248,250,252,0.6);">Prezzo lordo prenotazione (€)</label>
+                        <input type="number" id="tp-lordo" class="tp-input" value="500" min="50" step="50" />
+                    </div>
+                    <div class="tp-input-wrapper">
+                        <label style="color:rgba(248,250,252,0.6);">Commissione Moorent Pm</label>
+                        <select id="tp-comm" class="tp-input">
+                            <option value="12" selected>12% — Opzione A (Pilota)</option>
+                            <option value="10">10% — Opzione B (Completa)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Comparison Table -->
+                <div style="overflow-x:auto;">
+                    <table class="trasparenza-table">
+                        <thead>
+                            <tr>
+                                <th style="width:38%;"></th>
+                                <th>Airbnb<br/><span style="font-weight:400; font-size:0.75rem; color:#aaa;">host fee 3%</span></th>
+                                <th>Booking.com<br/><span style="font-weight:400; font-size:0.75rem; color:#aaa;">commissione 15%</span></th>
+                                <th class="col-direct">Diretto via Moorent<br/><span style="font-weight:600; font-size:0.75rem;">0% OTA</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color:#aaa; font-size:0.85rem;">Commissione OTA</td>
+                                <td id="tp-airbnb-ota" style="color:#ef4444; font-weight:600;">—</td>
+                                <td id="tp-booking-ota" style="color:#ef4444; font-weight:600;">—</td>
+                                <td id="tp-direct-ota" class="col-direct" style="color:#10b981; font-weight:700;">—</td>
+                            </tr>
+                            <tr>
+                                <td style="color:#aaa; font-size:0.85rem;">Base commissione (netto OTA − €20 pulizie)</td>
+                                <td id="tp-airbnb-base">—</td>
+                                <td id="tp-booking-base">—</td>
+                                <td id="tp-direct-base" class="col-direct">—</td>
+                            </tr>
+                            <tr>
+                                <td style="color:#aaa; font-size:0.85rem;">Commissione Moorent Pm</td>
+                                <td id="tp-airbnb-fee" style="color:#888;">—</td>
+                                <td id="tp-booking-fee" style="color:#888;">—</td>
+                                <td id="tp-direct-fee" class="col-direct">—</td>
+                            </tr>
+                            <tr>
+                                <td style="color:#f8fafc; font-size:1rem;"><strong>Netto alla struttura</strong></td>
+                                <td id="tp-airbnb-netto">—</td>
+                                <td id="tp-booking-netto">—</td>
+                                <td id="tp-direct-netto" class="col-direct">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="font-size:0.78rem; color:rgba(248,250,252,0.4); margin-top:1.25rem; text-align:center;">
+                    La colonna <strong style="color:#f3dfd9;">Diretto via Moorent</strong> è disponibile con Opzione B (include sito web con booking engine).
+                    Il canale diretto garantisce il netto più alto per la struttura.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     06 / SITO WEB PROFESSIONALE  ← SEZIONE OPZIONALE
+     Includere quasi sempre — escludere solo se la struttura
+     ha già un sito recente con booking engine integrato.
+═══════════════════════════════════════ -->
+<section id="sito-web">
+    <div class="container-lg">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <div>
+                <span class="section-label animate-on-scroll fade-in-left">Sito Web Professionale</span>
+                <h2 class="animate-on-scroll fade-in-left delay-100"
+                    style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; line-height:1.2; margin-bottom:1.25rem;">
+                    L'unico asset digitale<br/>
+                    <span style="color:#e4c8c0;">che lavora per voi ogni giorno,<br/>senza commissioni.</span>
+                </h2>
+                <p class="animate-on-scroll fade-in-left delay-200"
+                   style="color:#555; line-height:1.75; font-size:0.975rem; margin-bottom:2rem;">
+                    Un sito professionale riduce la dipendenza dalle OTA nel tempo e genera prenotazioni dirette
+                    a commissione zero. È un investimento autonomo a prezzo fisso, distinto dalla gestione.
+                </p>
+
+                <ul class="styled-list animate-on-scroll fade-in-left delay-300">
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Progettazione grafica personalizzata e allineata al brand della struttura</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Design moderno, mobile-first, ottimizzato per velocità</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>SEO locale per intercettare ricerche organiche sulla destinazione</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Integrazione con sistema di prenotazione diretta (booking engine)</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Galleria fotografica delle camere e degli spazi comuni</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Gestione autonoma dei contenuti — nessuna competenza tecnica richiesta</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Consegna completa con formazione all'uso inclusa</span></li>
+                    <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Piena proprietà del sito</strong> — nessun canone mensile obbligatorio</span></li>
+                </ul>
+
+                <div class="mt-8 animate-on-scroll fade-in-left delay-400"
+                     style="background:#f8fafc; border-radius:1rem; padding:1.25rem 1.5rem;">
+                    <p style="font-size:0.875rem; color:#666; line-height:1.6; margin:0;">
+                        <i class="fa-solid fa-info-circle" style="color:#e4c8c0; margin-right:0.4rem;"></i>
+                        Il sito web è una voce separata con <strong>prezzo fisso concordato e pagamento unico</strong>.
+                        Incluso nell'Opzione B oppure acquistabile come add-on sull'Opzione A.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visual mock browser -->
+            <div class="animate-on-scroll fade-in-right delay-200">
+                <div class="custom-card hoverable-card" style="padding:0; overflow:hidden; border-radius:1.5rem; box-shadow:0 24px 64px rgba(35,35,35,0.15);">
+                    <div style="background:#f1f3f5; padding:0.875rem 1.25rem; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid #e5e7eb;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#ff5f57;"></div>
+                        <div style="width:12px; height:12px; border-radius:50%; background:#febc2e;"></div>
+                        <div style="width:12px; height:12px; border-radius:50%; background:#28c840;"></div>
+                        <div style="flex:1; background:#fff; border-radius:6px; padding:0.3rem 0.75rem; font-size:0.72rem; color:#888; margin-left:0.5rem;">
+                            www.vostrhotel.com
+                        </div>
+                    </div>
+                    <div style="background:linear-gradient(160deg,#232323 0%,#3a2520 100%); padding:2.5rem 2rem; text-align:center;">
+                        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.6rem; color:#fff; margin-bottom:0.5rem; line-height:1.2;">
+                            Hotel <span style="color:#f3dfd9;">Vostro Nome</span>
+                        </div>
+                        <p style="color:rgba(255,255,255,0.55); font-size:0.82rem; margin-bottom:1.5rem;">Destinazione, Italia ★★★★</p>
+                        <div style="background:#f3dfd9; color:#232323; padding:0.7rem 1.5rem; border-radius:999px; font-weight:700; font-size:0.88rem; display:inline-block;">
+                            Prenota direttamente — Miglior tariffa garantita
+                        </div>
+                    </div>
+                    <div style="padding:1.5rem 2rem; background:#fff;">
+                        <div style="display:flex; gap:0.5rem; justify-content:space-around; text-align:center; flex-wrap:wrap;">
+                            <div>
+                                <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:#232323;">0%</div>
+                                <div style="font-size:0.7rem; color:#888;">commissioni OTA</div>
+                            </div>
+                            <div style="border-left:1px solid #f0f0f0;"></div>
+                            <div>
+                                <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:#232323;">+40%</div>
+                                <div style="font-size:0.7rem; color:#888;">prenotazioni dirette</div>
+                            </div>
+                            <div style="border-left:1px solid #f0f0f0;"></div>
+                            <div>
+                                <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:#232323;">100%</div>
+                                <div style="font-size:0.7rem; color:#888;">di vostra proprietà</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     07 / GESTIONE INCLUSA
+═══════════════════════════════════════ -->
+<section id="gestione" style="background:#f8fafc;">
+    <div class="container-lg">
+
+        <div class="text-center mb-14 animate-on-scroll fade-in-up">
+            <span class="section-label">Cosa gestiamo per voi</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem;">
+                Tutto quello che non<br/>dovete più pensare.
+            </h2>
+            <p style="max-width:520px; margin:0 auto; color:#666; line-height:1.7; font-size:1rem;">
+                Entrambe le opzioni includono l'intera gestione operativa online. Ecco cosa prendiamo in carico dal primo giorno.
+            </p>
+            <div class="accent-divider"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+
+            <div class="custom-card animate-on-scroll fade-in-up delay-100">
+                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-store"></i></div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Annunci sulle piattaforme</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Apertura, ottimizzazione e aggiornamento continuo degli annunci su Airbnb, Booking.com e canali aggiuntivi. Descrizioni, foto, pricing — tutto curato.</p>
+            </div>
+
+            <div class="custom-card animate-on-scroll fade-in-up delay-200">
+                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Revenue Management e Pricing</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Tariffe aggiornate in tempo reale su tutti i canali. Analisi della domanda, degli eventi locali e dei competitor per massimizzare ADR e RevPAR ogni giorno.</p>
+            </div>
+
+            <div class="custom-card animate-on-scroll fade-in-up delay-300">
+                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-comments"></i></div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Comunicazione Ospiti 360°</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Gestione completa: messaggi pre-arrivo, assistenza durante il soggiorno, follow-up post-checkout e raccolta attiva delle recensioni.</p>
+            </div>
+
+            <div class="custom-card animate-on-scroll fade-in-up delay-100">
+                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-file-lines"></i></div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Adempimenti Burocratici</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Schedine Alloggiati Web e ROSS 1000 inviate automaticamente per ogni ospite. Nessun adempimento manuale da ricordare.</p>
+            </div>
+
+            <div class="custom-card animate-on-scroll fade-in-up delay-200">
+                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-landmark"></i></div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Tassa di Soggiorno</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Calcolo, raccolta e rendicontazione della tassa di soggiorno gestiti interamente da noi. Report periodico pronto per il Comune.</p>
+            </div>
+
+            <div class="custom-card animate-on-scroll fade-in-up delay-300">
+                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Reportistica Mensile</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Report dettagliato ogni mese: occupazione, ADR, RevPAR, performance per canale, confronto con periodo precedente. Numeri chiari, sempre.</p>
+            </div>
+
+        </div>
+
+        <!-- Responsibilities note -->
+        <div class="animate-on-scroll fade-in-up delay-200"
+             style="background:#fff; border:1px solid #f0f0f0; border-radius:1.25rem; padding:1.75rem 2rem; display:flex; gap:1.25rem; align-items:flex-start; max-width:760px; margin:0 auto;">
+            <div style="width:44px; height:44px; min-width:44px; border-radius:12px; background:#f3dfd9; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:#232323; margin-top:2px;">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div>
+                <h4 style="font-weight:700; font-size:0.95rem; margin-bottom:0.4rem;">Cosa resta in carico al vostro team</h4>
+                <p style="font-size:0.875rem; color:#666; line-height:1.7;">
+                    Pulizie e cambio biancheria, check-in/check-out fisico e gestione dei costi operativi interni restano di competenza del team della struttura.
+                    Moorent Pm si coordina costantemente con voi su ogni arrivo per garantire un'accoglienza impeccabile.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     08 / VALORE AGGIUNTO
+═══════════════════════════════════════ -->
+<section id="valore" class="dark-section">
+    <div class="container-lg">
+
+        <div class="text-center mb-14 animate-on-scroll fade-in-up">
+            <span class="section-label">Servizi aggiuntivi</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; color:#f8fafc; margin-bottom:1rem;">
+                Un ecosistema di competenze,<br/>non solo un revenue manager.
+            </h2>
+            <p style="max-width:520px; margin:0 auto; color:rgba(248,250,252,0.6); line-height:1.7; font-size:1rem;">
+                Servizi attivabili progressivamente su accordo, pensati per far crescere il valore della struttura nel tempo.
+            </p>
+            <div class="accent-divider"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <div class="va-card animate-on-scroll fade-in-up delay-100">
+                <div class="va-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div>
+                    <h3 style="font-size:0.975rem; font-weight:700; color:#f8fafc; margin-bottom:0.4rem;">Welcome App Personalizzata</h3>
+                    <p style="font-size:0.875rem; color:rgba(248,250,252,0.55); line-height:1.6;">App digitale via QR code: informazioni sui servizi della struttura, mappa della zona, suggerimenti locali curati. Esperienza ospite migliorata senza app da scaricare.</p>
+                </div>
+            </div>
+
+            <div class="va-card animate-on-scroll fade-in-up delay-200">
+                <div class="va-icon"><i class="fa-brands fa-airbnb"></i></div>
+                <div>
+                    <h3 style="font-size:0.975rem; font-weight:700; color:#f8fafc; margin-bottom:0.4rem;">Attivazione Hotel su Airbnb</h3>
+                    <p style="font-size:0.875rem; color:rgba(248,250,252,0.55); line-height:1.6;">Percorso dedicato per strutture professionali su Airbnb. Un canale spesso non presidiato dagli hotel tradizionali, con grande potenziale di occupazione aggiuntiva.</p>
+                </div>
+            </div>
+
+            <div class="va-card animate-on-scroll fade-in-up delay-300">
+                <div class="va-icon"><i class="fa-solid fa-camera"></i></div>
+                <div>
+                    <h3 style="font-size:0.975rem; font-weight:700; color:#f8fafc; margin-bottom:0.4rem;">Servizio Fotografico Pro</h3>
+                    <p style="font-size:0.875rem; color:rgba(248,250,252,0.55); line-height:1.6;">Shooting professionale dedicato a tutte le unità del portfolio. Le foto sono il primo venditore online: investire in qualità si traduce direttamente in ADR più alto.</p>
+                </div>
+            </div>
+
+            <div class="va-card animate-on-scroll fade-in-up delay-200">
+                <div class="va-icon"><i class="fa-solid fa-couch"></i></div>
+                <div>
+                    <h3 style="font-size:0.975rem; font-weight:700; color:#f8fafc; margin-bottom:0.4rem;">Home Staging e Consulenza Spazi</h3>
+                    <p style="font-size:0.875rem; color:rgba(248,250,252,0.55); line-height:1.6;">Interventi mirati senza ristrutturazioni invasive. Calibratiamo ogni modifica per massimizzare l'impatto su ADR e conversione con il minor costo possibile.</p>
+                </div>
+            </div>
+
+            <div class="va-card animate-on-scroll fade-in-up delay-300">
+                <div class="va-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                    <h3 style="font-size:0.975rem; font-weight:700; color:#f8fafc; margin-bottom:0.4rem;">Consulenza Sviluppo Servizi</h3>
+                    <p style="font-size:0.875rem; color:rgba(248,250,252,0.55); line-height:1.6;">Analisi delle opportunità di espansione: colazione, esperienze locali, wellness, F&amp;B. Ogni nuovo servizio può aumentare il ticket medio per ospite.</p>
+                </div>
+            </div>
+
+            <div class="va-card animate-on-scroll fade-in-up delay-400">
+                <div class="va-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <div>
+                    <h3 style="font-size:0.975rem; font-weight:700; color:#f8fafc; margin-bottom:0.4rem;">Adempimenti Burocratici Avanzati</h3>
+                    <p style="font-size:0.875rem; color:rgba(248,250,252,0.55); line-height:1.6;">Alloggiati Web, ROSS 1000, comunicazioni ISTAT, dichiarazioni tassa di soggiorno. Gestiamo ogni adempimento in autonomia, senza disturbare il vostro team.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     09 / PASSI SUCCESSIVI
+═══════════════════════════════════════ -->
+<section id="passi">
+    <div class="container-lg">
+
+        <div class="text-center mb-14 animate-on-scroll fade-in-up">
+            <span class="section-label">Come iniziare</span>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:1rem;">
+                Dal primo contatto<br/>all'avvio operativo: 5 passi.
+            </h2>
+            <p style="max-width:520px; margin:0 auto; color:#666; line-height:1.7; font-size:1rem;">
+                Il processo è chiaro e rassicurante. Nessuna fretta, nessuna pressione.
+            </p>
+            <div class="accent-divider"></div>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+
+            <div class="step-item animate-on-scroll fade-in-up delay-100">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h3>Revisione Legale e Commerciale</h3>
+                    <p>Condividete la proposta con il vostro consulente. La bozza contrattuale è disponibile su richiesta in qualsiasi momento — trasparenza totale prima di qualsiasi impegno.</p>
+                </div>
+            </div>
+
+            <div class="step-item animate-on-scroll fade-in-up delay-200">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h3>Call o Incontro di Approfondimento</h3>
+                    <p>Una videochiamata o un incontro diretto per rispondere a ogni domanda, analizzare la vostra struttura e presentare i numeri reali del potenziale di crescita.</p>
+                </div>
+            </div>
+
+            <div class="step-item animate-on-scroll fade-in-up delay-300">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h3>Scelta dell'Opzione e dei Servizi</h3>
+                    <p>Definite insieme a noi l'opzione (A o B), le unità da includere nel perimetro e i servizi aggiuntivi di interesse. Il contratto finale rispecchia esattamente quanto concordato.</p>
+                </div>
+            </div>
+
+            <div class="step-item animate-on-scroll fade-in-up delay-400">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h3>Firma del Contratto</h3>
+                    <p>Contratto chiaro, senza clausole nascoste, progettato per tutelare entrambe le parti. Nessun vincolo pluriennale — uscita libera nei primi 90 giorni.</p>
+                </div>
+            </div>
+
+            <div class="step-item animate-on-scroll fade-in-up delay-500">
+                <div class="step-num" style="background:var(--accent); color:#f3dfd9;">5</div>
+                <div class="step-body">
+                    <h3>Onboarding e Avvio Operativo</h3>
+                    <p>Sopralluogo, shooting fotografico (se incluso), apertura e configurazione di tutti gli annunci. <strong>Siamo operativi entro 7–10 giorni lavorativi dalla firma.</strong></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     10 / CTA FINALE
+═══════════════════════════════════════ -->
+<section id="contatti">
+    <div class="container-lg">
+        <div class="max-w-2xl mx-auto text-center">
+
+            <span class="section-label animate-on-scroll fade-in-up" style="color:var(--primary-dark);">Iniziamo</span>
+
+            <h2 class="animate-on-scroll fade-in-up delay-100"
+                style="font-size:clamp(2rem,4vw,3rem); font-weight:800; color:#f8fafc; margin-bottom:1.25rem;">
+                Pronti per il<br/>
+                <span style="color:#f3dfd9;">Prossimo Capitolo?</span>
+            </h2>
+
+            <p class="animate-on-scroll fade-in-up delay-200"
+               style="color:rgba(248,250,252,0.65); line-height:1.75; font-size:1rem; margin-bottom:2.5rem;">
+                Il percorso inizia con un semplice incontro conoscitivo.
+                Nessun impegno, nessuna fretta. Solo una conversazione onesta su come possiamo
+                far crescere il vostro hotel insieme.
+            </p>
+
+            <!-- 3 micro-steps -->
+            <div class="grid grid-cols-3 gap-3 mb-10 animate-on-scroll fade-in-up delay-300">
+                <div style="text-align:center; padding:1.25rem 0.75rem;">
+                    <div style="width:44px; height:44px; border-radius:50%; background:rgba(243,223,217,0.12); border:1px solid rgba(243,223,217,0.2); display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; font-family:'Montserrat',sans-serif; font-weight:800; color:#f3dfd9;">1</div>
+                    <div style="font-size:0.82rem; color:rgba(248,250,252,0.65); line-height:1.5;">Valutiamo lo stato attuale e gli obiettivi</div>
+                </div>
+                <div style="text-align:center; padding:1.25rem 0.75rem; border-left:1px solid rgba(255,255,255,0.08); border-right:1px solid rgba(255,255,255,0.08);">
+                    <div style="width:44px; height:44px; border-radius:50%; background:rgba(243,223,217,0.12); border:1px solid rgba(243,223,217,0.2); display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; font-family:'Montserrat',sans-serif; font-weight:800; color:#f3dfd9;">2</div>
+                    <div style="font-size:0.82rem; color:rgba(248,250,252,0.65); line-height:1.5;">Definiamo il piano e il modello di commissione</div>
+                </div>
+                <div style="text-align:center; padding:1.25rem 0.75rem;">
+                    <div style="width:44px; height:44px; border-radius:50%; background:rgba(243,223,217,0.12); border:1px solid rgba(243,223,217,0.2); display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; font-family:'Montserrat',sans-serif; font-weight:800; color:#f3dfd9;">3</div>
+                    <div style="font-size:0.82rem; color:rgba(248,250,252,0.65); line-height:1.5;">Avviamo la trasformazione entro 10 giorni</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll fade-in-up delay-400">
+                <a href="https://wa.me/393519488289?text=Ciao%20Moorent%20Pm%2C%20vorrei%20ricevere%20la%20proposta%20per%20il%20mio%20hotel"
+                   target="_blank"
+                   class="btn"
+                   style="background:#25d366; color:#fff; gap:0.6rem; font-size:1rem; padding:1rem 2.2rem;">
+                    <i class="fa-brands fa-whatsapp" style="font-size:1.25rem;"></i>
+                    Scrivici su WhatsApp
+                </a>
+                <a href="mailto:info@moorentpm.it?subject=Proposta%20Hotel%20-%20Richiesta%20Informazioni"
+                   class="btn btn-outline"
+                   style="font-size:1rem; padding:1rem 2.2rem;">
+                    <i class="fa-solid fa-envelope"></i>
+                    info@moorentpm.it
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#1a1410; padding:2.5rem 0; border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="container-lg flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:#fff; opacity:0.8;">
+            Moorent<span style="color:#e4c8c0;">Pm</span>
+        </div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.3); text-align:center; line-height:1.6;">
+            Gestione Online Premium per Strutture Ricettive<br/>
+            © 2025 Moorent Pm · Tutti i diritti riservati
+        </div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.3);">
+            <a href="#hero" style="color:inherit; text-decoration:none; opacity:0.7;">Torna su ↑</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Main JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
