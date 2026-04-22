@@ -855,3 +855,32 @@ body.mobile-menu-open { overflow: hidden; }
         transition-duration: 0.01ms !important;
     }
 }
+
+/* === MOBILE OVERRIDES === */
+@media (max-width: 640px) {
+    .custom-card { padding: 1.25rem; }
+
+    .kpi-value { font-size: 2rem; }
+
+    .trasparenza-table th,
+    .trasparenza-table td {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .trasparenza-table tr:last-child td {
+        font-size: 0.85rem;
+    }
+
+    .tp-input-row { flex-direction: column; }
+    .tp-input-wrapper { min-width: unset; width: 100%; }
+
+    .step-item { gap: 1rem; }
+    .step-num { width: 40px; height: 40px; min-width: 40px; font-size: 0.875rem; }
+
+    .quote-block { padding: 1rem 1.25rem; font-size: 0.95rem; }
+
+    .va-card { padding: 1rem; }
+
+    .btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; }
+}
