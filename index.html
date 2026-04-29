@@ -105,7 +105,7 @@
             <p class="animate-on-scroll fade-in-up delay-200"
                style="font-size:clamp(1rem,2vw,1.15rem); color:rgba(248,250,252,0.70); max-width:580px; line-height:1.75; margin-bottom:2.5rem;">
                 Gestiamo la vostra struttura online con la cura di chi tratta ogni hotel come un asset unico.
-                Pricing dinamico, piattaforme, burocrazia e prenotazioni dirette:
+                Pricing automatico con AI, piattaforme, burocrazia e prenotazioni dirette:
                 tutto incluso, senza sorprese.
             </p>
 
@@ -164,10 +164,13 @@
                     <p style="font-size:0.875rem; color:#666; line-height:1.6;">Scegliamo con cura le strutture con cui lavoriamo. Il nostro portfolio è piccolo per scelta.</p>
                 </div>
 
-                <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-200">
-                    <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3 style="font-size:0.975rem; font-weight:700; margin-bottom:0.5rem;">Pricing Dinamico</h3>
-                    <p style="font-size:0.875rem; color:#666; line-height:1.6;">ADR e RevPAR monitorati ogni giorno. Tariffe aggiornate in tempo reale su tutti i canali.</p>
+                <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-200" style="border-left:3px solid #e4c8c0;">
+                    <div class="problem-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-robot"></i></div>
+                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem; flex-wrap:wrap;">
+                        <h3 style="font-size:0.975rem; font-weight:700; margin:0;">Pricing Automatico AI</h3>
+                        <span style="background:#232323; color:#f3dfd9; font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:0.1rem 0.45rem; border-radius:999px; white-space:nowrap;">AI-driven</span>
+                    </div>
+                    <p style="font-size:0.875rem; color:#666; line-height:1.6;">Il nostro sistema aggiorna le tariffe in autonomia su tutti i canali, analizzando domanda, competitor ed eventi locali — senza intervento manuale. ADR e RevPAR monitorati in tempo reale.</p>
                 </div>
 
                 <div class="custom-card hoverable-card animate-on-scroll fade-in-right delay-300">
@@ -268,35 +271,19 @@
             <div id="ba-slider">
 
                 <!-- AFTER (base) -->
-                <div id="ba-after" style="background:linear-gradient(160deg,#3a2520 0%,#6b4a3e 40%,#b8896e 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
-                    <div style="text-align:center; padding:2rem;">
-                        <div style="font-size:3.5rem; margin-bottom:1rem; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3));">🛏️</div>
-                        <div style="font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Camera Deluxe</div>
-                        <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
-                            <span style="background:rgba(243,223,217,0.2); color:#f3dfd9; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Warm Tones</span>
-                            <span style="background:rgba(243,223,217,0.2); color:#f3dfd9; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Soft Lighting</span>
-                            <span style="background:rgba(243,223,217,0.2); color:#f3dfd9; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Premium Feel</span>
-                        </div>
-                        <div style="margin-top:1.25rem; background:rgba(243,223,217,0.15); border-radius:999px; padding:0.4rem 1rem; display:inline-block; color:#f3dfd9; font-size:0.8rem; font-weight:600;">
-                            ADR stimato: +€35/notte
-                        </div>
-                    </div>
+                <div id="ba-after">
+                    <img src="Gemini_Generated_Image_hvaak9hvaak9hvaa%20%281%29.png"
+                         alt="Camera dopo il restyling"
+                         style="width:100%; height:100%; object-fit:cover; display:block;"
+                         draggable="false" />
                 </div>
 
                 <!-- BEFORE (clip) -->
-                <div id="ba-before" style="background:linear-gradient(160deg,#888 0%,#aaa 40%,#ccc 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem;">
-                    <div style="text-align:center; padding:2rem;">
-                        <div style="font-size:3.5rem; margin-bottom:1rem; filter:grayscale(0.5);">🛏️</div>
-                        <div style="font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Camera Deluxe</div>
-                        <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
-                            <span style="background:rgba(255,255,255,0.15); color:#fff; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Dull Colors</span>
-                            <span style="background:rgba(255,255,255,0.15); color:#fff; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Flat Light</span>
-                            <span style="background:rgba(255,255,255,0.15); color:#fff; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:600;">Generic</span>
-                        </div>
-                        <div style="margin-top:1.25rem; background:rgba(255,255,255,0.15); border-radius:999px; padding:0.4rem 1rem; display:inline-block; color:#fff; font-size:0.8rem; font-weight:600;">
-                            ADR attuale: tariffa base
-                        </div>
-                    </div>
+                <div id="ba-before">
+                    <img src="Gemini_Generated_Image_hvaak9hvaak9hvaa.png"
+                         alt="Camera prima del restyling"
+                         style="width:100%; height:100%; object-fit:cover; display:block;"
+                         draggable="false" />
                 </div>
 
                 <!-- Handle -->
@@ -385,7 +372,7 @@
 
                     <ul class="styled-list" style="margin-bottom:2rem;">
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>5 camere/unità selezionate</strong> — il perimetro ideale per testare il modello</span></li>
-                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Revenue management e pricing dinamico su tutte le unità</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Pricing automatico con AI</strong> — tariffe ottimizzate in tempo reale su tutti i canali, senza intervento manuale</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Apertura e ottimizzazione annunci su Airbnb, Booking.com e canali aggiuntivi</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Gestione completa della comunicazione con gli ospiti</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Adempimenti burocratici (Alloggiati Web, ROSS 1000, tassa di soggiorno)</span></li>
@@ -454,7 +441,7 @@
                     <ul class="styled-list" style="margin-bottom:2rem;">
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Intero portfolio dal giorno 1</strong> — nessuna fase di test, partenza immediata</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Tutto l'Opzione A, senza eccezioni</span></li>
-                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span>Revenue management avanzato per tipologia di camera (suite, standard, vista)</span></li>
+                        <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Pricing automatico AI avanzato</strong> per tipologia di camera (suite, standard, vista) — ottimizzazione differenziata per massimizzare il RevPAR complessivo</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Sito web premium incluso</strong> — progettazione, booking engine, SEO locale</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Shooting fotografico professionale</strong> incluso per tutte le camere</span></li>
                         <li><span class="check-icon"><i class="fa-solid fa-check" style="font-size:0.55rem;"></i></span><span><strong>Home staging</strong> e consulenza spazi inclusa</span></li>
@@ -705,10 +692,13 @@
                 <p style="font-size:0.9rem; color:#666; line-height:1.6;">Apertura, ottimizzazione e aggiornamento continuo degli annunci su Airbnb, Booking.com e canali aggiuntivi. Descrizioni, foto, pricing — tutto curato.</p>
             </div>
 
-            <div class="custom-card animate-on-scroll fade-in-up delay-200">
-                <div class="diff-icon" style="margin-bottom:1rem;"><i class="fa-solid fa-chart-line"></i></div>
-                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Revenue Management e Pricing</h3>
-                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Tariffe aggiornate in tempo reale su tutti i canali. Analisi della domanda, degli eventi locali e dei competitor per massimizzare ADR e RevPAR ogni giorno.</p>
+            <div class="custom-card animate-on-scroll fade-in-up delay-200" style="border-top:3px solid #e4c8c0;">
+                <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem; flex-wrap:wrap;">
+                    <div class="diff-icon" style="margin:0;"><i class="fa-solid fa-robot"></i></div>
+                    <span style="background:#232323; color:#f3dfd9; font-size:0.62rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:0.15rem 0.5rem; border-radius:999px;">AI-driven</span>
+                </div>
+                <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.6rem;">Pricing Automatico con AI</h3>
+                <p style="font-size:0.9rem; color:#666; line-height:1.6;">Non aggiorniamo i prezzi a mano. Il nostro sistema analizza in autonomia domanda, stagionalità, eventi locali e tariffe dei competitor — e aggiusta le vostre tariffe su tutti i canali in tempo reale, 24/7, senza alcun intervento manuale.</p>
             </div>
 
             <div class="custom-card animate-on-scroll fade-in-up delay-300">
@@ -735,6 +725,30 @@
                 <p style="font-size:0.9rem; color:#666; line-height:1.6;">Report dettagliato ogni mese: occupazione, ADR, RevPAR, performance per canale, confronto con periodo precedente. Numeri chiari, sempre.</p>
             </div>
 
+        </div>
+
+        <!-- AI Pricing Spotlight -->
+        <div class="animate-on-scroll fade-in-up delay-100"
+             style="background:linear-gradient(135deg,#232323 0%,#3a2520 100%); border-radius:1.5rem; padding:2rem 2.5rem; margin-bottom:1.5rem; display:flex; flex-wrap:wrap; gap:2rem; align-items:center;">
+            <div style="flex:0 0 auto;">
+                <div style="width:68px; height:68px; border-radius:1rem; background:rgba(243,223,217,0.12); display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:#f3dfd9;">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+            </div>
+            <div style="flex:1; min-width:220px;">
+                <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem; flex-wrap:wrap;">
+                    <h3 style="font-size:1.1rem; font-weight:800; color:#f8fafc; margin:0;">Pricing Automatico con AI — incluso in ogni opzione</h3>
+                </div>
+                <p style="font-size:0.9rem; color:rgba(248,250,252,0.65); line-height:1.75; margin-bottom:1.1rem;">
+                    Uno dei servizi più richiesti dagli hotel: i prezzi vengono ottimizzati in automatico dal nostro sistema, senza che dobbiate toccare nulla. Ogni giorno analizza domanda, occupazione, stagionalità, eventi locali e tariffe dei competitor — e aggiorna le tariffe su tutti i canali in tempo reale.
+                </p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                    <span style="background:rgba(243,223,217,0.1); color:#f3dfd9; padding:0.25rem 0.8rem; border-radius:999px; font-size:0.78rem; font-weight:600; border:1px solid rgba(243,223,217,0.15);">Aggiornamento in tempo reale</span>
+                    <span style="background:rgba(243,223,217,0.1); color:#f3dfd9; padding:0.25rem 0.8rem; border-radius:999px; font-size:0.78rem; font-weight:600; border:1px solid rgba(243,223,217,0.15);">Analisi competitor automatica</span>
+                    <span style="background:rgba(243,223,217,0.1); color:#f3dfd9; padding:0.25rem 0.8rem; border-radius:999px; font-size:0.78rem; font-weight:600; border:1px solid rgba(243,223,217,0.15);">Ottimizzazione per eventi locali</span>
+                    <span style="background:rgba(243,223,217,0.1); color:#f3dfd9; padding:0.25rem 0.8rem; border-radius:999px; font-size:0.78rem; font-weight:600; border:1px solid rgba(243,223,217,0.15);">Zero intervento manuale</span>
+                </div>
+            </div>
         </div>
 
         <!-- Responsibilities note -->
